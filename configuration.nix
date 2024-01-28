@@ -140,14 +140,9 @@ in {
     spotify
     brave
 
-    # Setup Flameshot
-    flameshot
-    xdg-desktop-portal
-    xdg-desktop-portal
-
     gnomeExtensions.paperwm
     orchis-theme # gtk-theme
-    alejandra # nix language formatter
+    alejandra # nix language formatterl
   ];
 
   programs.neovim = {
