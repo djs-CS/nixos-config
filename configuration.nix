@@ -1,21 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
-let
-  unstable = import (builtins.fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz)
-  { config = config.nixpkgs.config; };
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz;
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  unstable =
+    import (builtins.fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz)
+    {config = config.nixpkgs.config;};
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz;
+in {
   # Include the results of the hardware scan.
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    (import "${home-manager}/nixos")
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -59,7 +59,7 @@ in
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -87,7 +87,7 @@ in
   users.users.djs = {
     isNormalUser = true;
     description = "Dylan Josef Sumser";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   home-manager.users.djs = {
@@ -96,10 +96,29 @@ in
       enable = true;
       settings = {
         "org/gnome/shell" = {
-	  enabled-extensions = [
-	    "forge@jmmaranan.com"
-	  ];
-	};
+          enabled-extensions = [
+            "paperwm@paperwm.github.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+          ];
+        };
+
+        "org/gnome/shell/extensions/user-theme" = {
+          name = "Orchis-Purple-Light-Compact";
+        };
+
+        "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
+
+        "org/gnome/settings-daemon/plugins/media-keys" = {
+          screensaver = ["<Control><Super>q"];
+        };
+
+        "org/gnome/desktop/wm/keybindings" = {
+          close = ["<Super>q"];
+        };
+
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
       };
     };
   };
@@ -107,24 +126,31 @@ in
   nixpkgs.config = {
     allowUnfree = true; # allow unfree packages
     permittedInsecurePackages = [
-    "electron-25.9.0"
+      "electron-25.9.0"
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     git
-     gh
-     unstable.obsidian
-     vscode
-     spotify
-     brave
-     gnomeExtensions.forge
+    git
+    gh
+    unstable.obsidian
+    vscode
+    spotify
+    brave
+
+    # Setup Flameshot
+    flameshot
+    xdg-desktop-portal
+    xdg-desktop-portal
+
+    gnomeExtensions.paperwm
+    orchis-theme # gtk-theme
+    alejandra # nix language formatter
   ];
 
-
-  programs.neovim = { 
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
@@ -156,7 +182,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  
-  system.stateVersion = "23.11"; # Did you read the comment?
 
+  system.stateVersion = "23.11"; # Did you read the comment?
 }
