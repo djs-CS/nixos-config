@@ -1,8 +1,12 @@
 {
     "apiKey": null,
     "apiLogPath": null,
+    "ignoreOriginList": [],
     "webBindAddress": "127.0.0.1",
     "webBindPort": 8765,
-    "webCorsOriginList": ["http://localhost"],
-    "ignoreOriginList": []
+    "webCorsOrigin": "http://localhost",
+    "webCorsOriginList": [
+        "http://localhost",
+        "app://obsidian.md"
+    ]
 }
