@@ -135,14 +135,17 @@ in {
   environment.systemPackages = with pkgs; [
     git
     gh
+
+    anki
     unstable.obsidian
     vscode
+
     spotify
     brave
 
     gnomeExtensions.paperwm
     orchis-theme # gtk-theme
-    alejandra # nix language formatterl
+    alejandra # nix language formatter
   ];
 
   programs.neovim = {
