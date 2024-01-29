@@ -143,6 +143,10 @@ in {
     spotify
     brave
 
+    todoist-electron
+    morgen
+    _1password-gui
+
     gnomeExtensions.paperwm
     orchis-theme # gtk-theme
     alejandra # nix language formatter
