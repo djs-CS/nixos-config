@@ -91,6 +91,27 @@ in {
   };
 
   home-manager.users.djs = {
+    gtk = {
+      enable = true;
+
+      iconTheme = {
+        name = "Catpuccin-Papirus";
+        package = pkgs.catppuccin-papirus-folders.override {
+          accent = "mauve";
+          flavor = "macchiato";
+        };
+      };
+
+      theme = {
+        name = "Catppuccin-Macchiato-Compact-Mauve-Dark";
+        package = pkgs.catppuccin-gtk.override {
+          accents = ["mauve"];
+          size = "compact";
+          variant = "macchiato";
+        };
+      };
+    };
+    home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-Dark";
     home.stateVersion = "23.11";
     dconf = {
       enable = true;
@@ -103,7 +124,7 @@ in {
         };
 
         "org/gnome/shell/extensions/user-theme" = {
-          name = "Orchis-Purple-Light-Compact";
+          name = "Catppuccin-Macchiato-Compact-Mauve-Dark";
         };
 
         "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
@@ -147,9 +168,14 @@ in {
     morgen
     _1password-gui
 
+    neofetch
+
+    gnome.gnome-terminal
     gnomeExtensions.paperwm
-    orchis-theme # gtk-theme
-    alejandra # nix language formatter
+    gnome.gnome-tweaks
+    gnome.gnome-themes-extra
+
+    alejandra # nix languageformatter
   ];
 
   programs.neovim = {
