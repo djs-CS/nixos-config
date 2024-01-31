@@ -90,12 +90,13 @@ in {
     extraGroups = ["networkmanager" "wheel"];
   };
 
+  home-manager.useGlobalPkgs = true;
   home-manager.users.djs = {
     gtk = {
       enable = true;
 
       iconTheme = {
-        name = "Catpuccin-Papirus";
+        name = "Papirus";
         package = pkgs.catppuccin-papirus-folders.override {
           accent = "mauve";
           flavor = "macchiato";
@@ -107,12 +108,15 @@ in {
         package = pkgs.catppuccin-gtk.override {
           accents = ["mauve"];
           size = "compact";
+          tweaks = ["normal"];
           variant = "macchiato";
         };
       };
     };
-    home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-Dark";
-    home.stateVersion = "23.11";
+    home = {
+      stateVersion = "23.11";
+    };
+
     dconf = {
       enable = true;
       settings = {
@@ -127,6 +131,12 @@ in {
           name = "Catppuccin-Macchiato-Compact-Mauve-Dark";
         };
 
+        "org/gnome/desktop/interface" = {
+          icon-theme = "Papirus";
+          gtk-theme = "Catppuccin-Macchiato-Compact-Mauve-Dark";
+          color-scheme = "prefer-dark";
+        };
+
         "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
 
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -135,10 +145,6 @@ in {
 
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
-        };
-
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
         };
       };
     };
@@ -183,9 +189,13 @@ in {
     defaultEditor = true;
   };
 
+  programs.dconf = {
+    enable = true;
+  };
   environment.variables = {
     EDITOR = "nvim";
     SUDO_EDITOR = "nvim";
+    GTK_THEME = "Catppuccin-Macchiato-Compact-Mauve-Dark"; # This allows GTK-4 Styles to be applied automatically
   };
 
   # Some programs need SUID wrappers, can be configured further or are
