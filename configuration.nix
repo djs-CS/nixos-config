@@ -165,7 +165,7 @@ in {
 
     anki
     unstable.obsidian
-    vscode
+    unstable.vscode
 
     spotify
     brave
@@ -178,6 +178,7 @@ in {
 
     gnome.gnome-terminal
     gnomeExtensions.paperwm
+    gnomeExtensions.vertical-workspaces
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
 
