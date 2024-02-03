@@ -34,21 +34,6 @@ in {
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_BR.UTF-8";
-    LC_IDENTIFICATION = "pt_BR.UTF-8";
-    LC_MEASUREMENT = "pt_BR.UTF-8";
-    LC_MONETARY = "pt_BR.UTF-8";
-    LC_NAME = "pt_BR.UTF-8";
-    LC_NUMERIC = "pt_BR.UTF-8";
-    LC_PAPER = "pt_BR.UTF-8";
-    LC_TELEPHONE = "pt_BR.UTF-8";
-    LC_TIME = "pt_BR.UTF-8";
-  };
-
   # Configure keymap in X11
   services.xserver = {
     enable = true; # Enable the X11 windowing system.
@@ -92,6 +77,110 @@ in {
 
   home-manager.useGlobalPkgs = true;
   home-manager.users.djs = {
+    programs.alacritty = {
+      enable = true;
+      package = unstable.alacritty;
+      # use a color scheme from the overlay
+      settings = {
+        colors = {
+          # Default colors
+          primary = {
+            background = "#24273A"; # base
+            foreground = "#CAD3F5"; # text
+            # Bright and dim foreground colors
+            dim_foreground = "#CAD3F5"; # text
+            bright_foreground = "#CAD3F5"; # text
+          };
+
+          # Cursor colors
+          cursor = {
+            text = "#24273A"; # base
+            cursor = "#F4DBD6"; # rosewater
+          };
+          vi_mode_cursor = {
+            text = "#24273A"; # base
+            cursor = "#B7BDF8"; # lavender
+          };
+
+          # Search colors
+          search = {
+            matches = {
+              foreground = "#24273A"; # base
+              background = "#A5ADCB"; # subtext0
+            };
+            focused_match = {
+              foreground = "#24273A"; # base
+              background = "#A6DA95"; # green
+            };
+          };
+
+          # Keyboard regex hints
+          hints = {
+            start = {
+              foreground = "#24273A"; # base
+              background = "#EED49F"; # yellow
+            };
+            end = {
+              foreground = "#24273A"; # base
+              background = "#A5ADCB"; # subtext0
+            };
+          };
+
+          # Selection colors
+          selection = {
+            text = "#24273A"; # base
+            background = "#F4DBD6"; # rosewater
+          };
+
+          # Normal colors
+          normal = {
+            black = "#494D64"; # surface1
+            red = "#ED8796"; # red
+            green = "#A6DA95"; # green
+            yellow = "#EED49F"; # yellow
+            blue = "#8AADF4"; # blue
+            magenta = "#F5BDE6"; # pink
+            cyan = "#8BD5CA"; # teal
+            white = "#B8C0E0"; # subtext1
+          };
+
+          # Bright colors
+          bright = {
+            black = "#5B6078"; # surface2
+            red = "#ED8796"; # red
+            green = "#A6DA95"; # green
+            yellow = "#EED49F"; # yellow
+            blue = "#8AADF4"; # blue
+            magenta = "#F5BDE6"; # pink
+            cyan = "#8BD5CA"; # teal
+            white = "#A5ADCB"; # subtext0
+          };
+
+          # Dim colors
+          dim = {
+            black = "#494D64"; # surface1
+            red = "#ED8796"; # red
+            green = "#A6DA95"; # green
+            yellow = "#EED49F"; # yellow
+            blue = "#8AADF4"; # blue
+            magenta = "#F5BDE6"; # pink
+            cyan = "#8BD5CA"; # teal
+            white = "#B8C0E0"; # subtext1
+          };
+
+          indexed_colors = [
+            {
+              index = 16;
+              color = "#F5A97F";
+            }
+            {
+              index = 17;
+              color = "#F4DBD6";
+            }
+          ];
+        };
+      };
+    };
     gtk = {
       enable = true;
 
@@ -124,6 +213,16 @@ in {
           enabled-extensions = [
             "paperwm@paperwm.github.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "vertical-workspaces@G-dH.github.com"
+          ];
+          favorite-apps = [
+            "Alacritty.desktop"
+            "obsidian.desktop"
+            "morgen.desktop"
+            "todoist.desktop"
+            "code.desktop"
+            "spotify.desktop"
+            "chromium-browser.desktop"
           ];
         };
 
@@ -141,10 +240,6 @@ in {
 
         "org/gnome/settings-daemon/plugins/media-keys" = {
           screensaver = ["<Control><Super>q"];
-        };
-
-        "org/gnome/desktop/wm/keybindings" = {
-          close = ["<Super>q"];
         };
       };
     };
@@ -168,7 +263,7 @@ in {
     unstable.vscode
 
     spotify
-    brave
+    chromium
 
     todoist-electron
     morgen
@@ -176,7 +271,6 @@ in {
 
     neofetch
 
-    gnome.gnome-terminal
     gnomeExtensions.paperwm
     gnomeExtensions.vertical-workspaces
     gnome.gnome-tweaks
@@ -188,6 +282,25 @@ in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+  };
+
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "aeblfdkhhhdcdjpifhhbdiojplfjncoa" #1Password
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" #uBlock Origin
+      "jldhpllghnbhlbpcmnajkpdmadaolakh" #ToDoist
+      "cmpdlhmnmjhihmcfnigoememnffkimlk" #Catpuccin Theme
+    ];
+    extraOpts = {
+      "PasswordManagerEnabled" = false;
+      "SpellcheckEnabled" = true;
+      "SpellcheckLanguage" = [
+        "de"
+        "en-US"
+        "pt-BR"
+      ];
+    };
   };
 
   programs.dconf = {
