@@ -43,6 +43,10 @@ in {
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+
+    # Remove xTerm app
+    excludePackages = [pkgs.xterm];
+    desktopManager.xterm.enable = false;
   };
 
   # Enable CUPS to print documents.
@@ -278,6 +282,28 @@ in {
 
     alejandra # nix languageformatter
   ];
+
+  environment.gnome.excludePackages =
+    (with pkgs; [
+      gnome-photos
+      gnome-tour
+      gnome-console # terminal emulator
+    ])
+    ++ (with pkgs.gnome; [
+      cheese # webcam tool
+      gnome-music
+      gnome-terminal
+      gedit # text editor
+      epiphany # web browser
+      geary # email reader
+      evince # document viewer
+      gnome-characters
+      totem # video player
+      tali # poker game
+      iagno # go game
+      hitori # sudoku game
+      atomix # puzzle game
+    ]);
 
   programs.neovim = {
     enable = true;
