@@ -1,6 +1,6 @@
 [/]
 disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['paperwm@paperwm.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com', 'paperwm@paperwm.github.com']
 favorite-apps=['Alacritty.desktop', 'obsidian.desktop', 'morgen.desktop', 'todoist.desktop', 'code.desktop', 'spotify.desktop', 'chromium-browser.desktop']
 welcome-dialog-last-shown-version='45.3'
 
@@ -9,7 +9,7 @@ default-focus-mode=0
 disable-topbar-styling=true
 edge-preview-scale=0.16
 gesture-horizontal-fingers=0
-gesture-workspace-fingers=3
+gesture-workspace-fingers=4
 horizontal-margin=21
 maximize-width-percent=0.98999999999999999
 minimap-scale=0.14000000000000001
@@ -19,7 +19,7 @@ restore-keybinds='{"toggle-tiled-right":{"bind":"[\\"<Super>Right\\"]","schema_i
 restore-workspaces-only-on-primary='false'
 show-focus-mode-icon=false
 show-window-position-bar=false
-show-workspace-indicator=true
+show-workspace-indicator=false
 swipe-friction=[0.40000000000000002, 0.10000000000000001]
 swipe-sensitivity=[1.8999999999999999, 1.8999999999999999]
 use-default-background=true
@@ -93,17 +93,23 @@ name='Catppuccin-Macchiato-Compact-Mauve-Dark'
 [extensions/vertical-workspaces]
 app-grid-folder-icon-grid=3
 dash-bg-color=0
+dash-bg-gs3-style=true
 dash-max-icon-size=48
-dash-show-extensions-icon=1
-dash-show-recent-files-icon=1
-dash-show-windows-icon=1
+dash-position=1
+dash-show-extensions-icon=0
+dash-show-recent-files-icon=0
+dash-show-windows-icon=0
 notification-position=2
 search-view-animation=0
+show-app-icon-position=2
+show-ws-preview-bg=false
 show-wst-labels=3
 startup-state=2
 win-preview-mid-mouse-btn-action=0
 workspace-switcher-animation=1
+ws-thumbnails-full=false
 ws-thumbnails-position=0
+wst-position-adjust=0
 
 [keybindings]
 focus-active-notification=@as []
