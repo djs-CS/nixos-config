@@ -245,6 +245,21 @@ in {
         "org/gnome/settings-daemon/plugins/media-keys" = {
           screensaver = ["<Control><Super>q"];
         };
+
+        "org/gnome/desktop/background" = {
+          color-shading-type = "solid";
+          picture-opacity = 100;
+          picture-options = "zoom";
+          picture-uri = "file:///usr/share/nix.png";
+          picture-uri-dark = "file:///usr/share/nix.png";
+          primary-color = "#000000";
+          secondary-color = "#000000";
+          show-desktop-icons = false;
+        };
+
+        "org/gnome/desktop/screensaver" = {
+          user-switch-enabled = false;
+        };
       };
     };
   };
@@ -331,6 +346,21 @@ in {
 
   programs.dconf = {
     enable = true;
+    profiles = {
+      gdm.databases = [
+        {
+          settings = {
+            "org/gnome/login-screen" = {
+              banner-message-enable = true;
+              banner-message-text = "Get Focused\nHave Fun\nBegin Again";
+            };
+            "org/gnome/desktop/background" = {
+              picture-uri = "file:///usr/share/nix.png";
+            };
+          };
+        }
+      ];
+    };
   };
   environment.variables = {
     EDITOR = "nvim";
