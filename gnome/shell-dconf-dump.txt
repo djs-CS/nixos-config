@@ -1,7 +1,7 @@
 [/]
 disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com', 'paperwm@paperwm.github.com']
-favorite-apps=['Alacritty.desktop', 'obsidian.desktop', 'morgen.desktop', 'todoist.desktop', 'code.desktop', 'spotify.desktop', 'chromium-browser.desktop']
+enabled-extensions=['paperwm@paperwm.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com']
+favorite-apps=['Alacritty.desktop', 'code.desktop', 'obsidian.desktop', 'todoist.desktop', 'morgen.desktop', 'chromium-browser.desktop', 'spotify.desktop', 'slack.desktop', 'figma-linux.desktop']
 welcome-dialog-last-shown-version='45.3'
 
 [extensions/paperwm]
