@@ -221,12 +221,16 @@ in {
           ];
           favorite-apps = [
             "Alacritty.desktop"
-            "obsidian.desktop"
-            "morgen.desktop"
-            "todoist.desktop"
             "code.desktop"
-            "spotify.desktop"
+            "obsidian.desktop"
+
+            "todoist.desktop"
+            "morgen.desktop"
             "chromium-browser.desktop"
+
+            "spotify.desktop"
+            "slack.desktop"
+            "figma-linux.desktop"
           ];
         };
 
@@ -258,7 +262,7 @@ in {
         };
 
         "org/gnome/desktop/screensaver" = {
-          user-switch-enabled = false;
+          user-switch-enabled = true;
         };
       };
     };
@@ -284,6 +288,9 @@ in {
     spotify
     chromium
 
+    slack
+    figma-linux
+
     todoist-electron
     morgen
     _1password-gui
@@ -294,6 +301,8 @@ in {
     gnomeExtensions.vertical-workspaces
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
+
+    gnome.pomodoro
 
     alejandra # nix languageformatter
   ];
@@ -353,9 +362,6 @@ in {
             "org/gnome/login-screen" = {
               banner-message-enable = true;
               banner-message-text = "Get Focused\nHave Fun\nBegin Again";
-            };
-            "org/gnome/desktop/background" = {
-              picture-uri = "file:///usr/share/nix.png";
             };
           };
         }
