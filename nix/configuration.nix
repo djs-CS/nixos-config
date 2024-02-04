@@ -242,6 +242,10 @@ in {
           icon-theme = "Papirus";
           gtk-theme = "Catppuccin-Macchiato-Compact-Mauve-Dark";
           color-scheme = "prefer-dark";
+
+          font-name = "Geist Light 11";
+          document-font-name = "Geist Medium 11";
+          monospace-font-name = "Geist Mono 10";
         };
 
         "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
