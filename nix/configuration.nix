@@ -216,6 +216,8 @@ in {
         "org/gnome/shell" = {
           enabled-extensions = [
             "paperwm@paperwm.github.com"
+            "pomodoro@arun.codito.in"
+            "sp-tray@sp-tray.esenliyim.github.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "vertical-workspaces@G-dH.github.com"
           ];
