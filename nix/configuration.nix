@@ -296,7 +296,7 @@ in {
 
     slack
     figma-linux
-    zoom-us
+    unstable.zoom-us
 
     todoist-electron
     morgen
