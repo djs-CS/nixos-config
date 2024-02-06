@@ -1,6 +1,6 @@
 [/]
-disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['paperwm@paperwm.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com']
+disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['vertical-workspaces@G-dH.github.com', 'sp-tray@sp-tray.esenliyim.github.com', 'paperwm@paperwm.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in']
 favorite-apps=['Alacritty.desktop', 'code.desktop', 'obsidian.desktop', 'todoist.desktop', 'morgen.desktop', 'chromium-browser.desktop', 'spotify.desktop', 'slack.desktop', 'figma-linux.desktop']
 welcome-dialog-last-shown-version='45.3'
 
@@ -86,6 +86,11 @@ index=2
 
 [extensions/paperwm/workspaces/ea5d1b3d-c834-4335-9ac7-674afbf901c4]
 index=0
+
+[extensions/sp-tray]
+artist-max-length=34
+marquee-interval=950
+marquee-length=49
 
 [extensions/user-theme]
 name='Catppuccin-Macchiato-Compact-Mauve-Dark'
