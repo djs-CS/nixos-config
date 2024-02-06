@@ -296,6 +296,7 @@ in {
 
     slack
     figma-linux
+    zoom-us
 
     todoist-electron
     morgen
