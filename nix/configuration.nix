@@ -345,6 +345,7 @@ in {
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" #uBlock Origin
       "jldhpllghnbhlbpcmnajkpdmadaolakh" #ToDoist
       "cmpdlhmnmjhihmcfnigoememnffkimlk" #Catpuccin Theme
+      "jjhefcfhmnkfeepcpnilbbkaadhngkbi" #Readwise Highlighter
     ];
     extraOpts = {
       "PasswordManagerEnabled" = false;
