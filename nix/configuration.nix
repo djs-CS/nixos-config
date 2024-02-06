@@ -220,6 +220,7 @@ in {
             "sp-tray@sp-tray.esenliyim.github.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "vertical-workspaces@G-dH.github.com"
+            "trayIconsReloaded@selfmade.pl"
           ];
           favorite-apps = [
             "Alacritty.desktop"
@@ -307,6 +308,7 @@ in {
     gnomeExtensions.paperwm
     gnomeExtensions.vertical-workspaces
     gnomeExtensions.spotify-tray
+    gnomeExtensions.tray-icons-reloaded
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
 
