@@ -303,6 +303,7 @@ in {
 
     gnomeExtensions.paperwm
     gnomeExtensions.vertical-workspaces
+    gnomeExtensions.spotify-tray
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
 
