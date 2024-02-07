@@ -289,6 +289,7 @@ in {
   environment.systemPackages = with pkgs; [
     git
     gh
+    go
 
     anki
     unstable.obsidian
