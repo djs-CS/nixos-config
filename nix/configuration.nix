@@ -289,7 +289,11 @@ in {
   environment.systemPackages = with pkgs; [
     git
     gh
+
     go
+    protobuf
+    protoc-gen-go
+    protoc-gen-go-grpc
 
     anki
     unstable.obsidian
