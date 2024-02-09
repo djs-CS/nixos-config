@@ -291,9 +291,11 @@ in {
     gh
 
     go
+
     protobuf
     protoc-gen-go
     protoc-gen-go-grpc
+    clang-tools # used as formatter for .proto files
 
     anki
     unstable.obsidian
